@@ -9,9 +9,9 @@ CREATE TABLE employees(
     second_last_name VARCHAR(30) NOT NULL,
 	pass CHAR(64) NOT NULL,
 	is_enabled TINYINT(1) DEFAULT 1 NOT NULL,
-	updated_by CHAR(8),
+	disabled_by CHAR(8),
 	CONSTRAINT pk_dni PRIMARY KEY (dni),
-	CONSTRAINT fk_dni_updated_by FOREIGN KEY (updated_by) REFERENCES employees(dni)
+	CONSTRAINT fk_dni_updated_by FOREIGN KEY (disabled_by) REFERENCES employees(dni)
 );
 
 -- Creación de tabla de marcaciones.
