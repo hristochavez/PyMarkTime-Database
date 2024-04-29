@@ -9,6 +9,7 @@ CREATE TABLE employees(
     second_last_name VARCHAR(30) NOT NULL,
 	pass CHAR(64) NOT NULL,
 	is_enabled TINYINT(1) DEFAULT 1 NOT NULL,
+    created_on DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	disabled_by CHAR(8),
 	CONSTRAINT pk_dni PRIMARY KEY (dni),
 	CONSTRAINT fk_dni_updated_by FOREIGN KEY (disabled_by) REFERENCES employees(dni)
